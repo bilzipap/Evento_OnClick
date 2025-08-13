@@ -14,11 +14,13 @@ botondef.addEventListener('click', function(){
     this.remove()
 });
 
-let megusta = document.querySelector(".Likecount")
-let namedef = document.querySelector(".Nombre_gato")
-let btnmegusta = document.querySelector(".botonmegusta")
+let namedef = document.querySelectorAll(".Nombre_gato")
+let btnmegusta = document.querySelectorAll(".botonmegusta")
+let megusta = document.querySelectorAll(".Likecount")
 
-
-btnmegusta.addEventListener('click', function(){
-    alert(namedef.textContent +' '+ "le diste like!!")
-})
+for(let i = 0; i < btnmegusta.length; i++){
+    btnmegusta[i].addEventListener('click', function(){
+        alert(namedef[i].textContent+' '+ "le diste like!!")
+        megusta[i].textContent++;
+    });
+}
